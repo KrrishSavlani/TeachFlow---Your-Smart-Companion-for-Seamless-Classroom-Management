@@ -1,6 +1,6 @@
 package com.Alpha.TeachFlow.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,10 +8,13 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
-
 @Entity
 @Data
 public class Request {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long requestId;
 
     @NotBlank
     private String schoolName;
@@ -64,7 +67,13 @@ public class Request {
     @NotBlank
     private String password;
 
+    @NotNull
+    private Boolean requestApproval = false;
+
     // Getters and Setters
+    public Long getRequestId() { return requestId; }
+    public void setRequestId(Long requestId) { this.requestId = requestId; }
+
     public String getSchoolName() { return schoolName; }
     public void setSchoolName(String schoolName) { this.schoolName = schoolName; }
 
@@ -109,4 +118,11 @@ public class Request {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public Boolean getRequestApproval() { return requestApproval; }
+    public void setRequestApproval(Boolean requestApproval) { this.requestApproval = requestApproval; }
+
+    public void approveRequest() {
+        this.requestApproval = false;
+    }
 }
