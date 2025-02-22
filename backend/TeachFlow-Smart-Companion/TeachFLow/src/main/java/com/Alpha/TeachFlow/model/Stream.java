@@ -11,12 +11,12 @@ public class Stream {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // Primary Key
+    private Long id;
 
     @NotBlank
-    private String streamName;  // Example: Science, Commerce, Arts, etc.
+    private String streamName;
 
-    // Many streams belong to one school
+
     @ManyToOne
     @JoinColumn(name = "school_id", nullable = false)
     @JsonBackReference

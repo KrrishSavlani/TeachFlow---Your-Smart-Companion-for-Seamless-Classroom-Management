@@ -9,12 +9,12 @@ import java.util.Optional;
 @Repository
 public interface SchoolRepo extends JpaRepository<School, Long> {
 
-    // Find school by schoolCode
+
     Optional<School> findBySchoolCode(String schoolCode);
 
-    // Find school by email
+
     Optional<School> findByEmail(String email);
 
-    // Find all schools with pending approval
+
     Optional<School> findByRequestApproval(Boolean requestApproval);
 }

@@ -21,12 +21,12 @@ public class medium {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;  // Primary Key
+        private Long id;
 
         @NotBlank
-        private String mediumName;  // Example: English, Hindi, etc.
+        private String mediumName;
 
-        // Many mediums belong to one school
+
         @ManyToOne
         @JoinColumn(name = "school_id", nullable = false)
         @JsonBackReference

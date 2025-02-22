@@ -14,9 +14,9 @@ public class standard {
     private Long id;  // Primary Key
 
     @NotBlank
-    private String standardName;  // Example: 1st, 2nd, 10th, etc.
+    private String standardName;
 
-    // Many standards belong to one school
+
     @ManyToOne
     @JoinColumn(name = "school_id", nullable = false)
     @JsonBackReference

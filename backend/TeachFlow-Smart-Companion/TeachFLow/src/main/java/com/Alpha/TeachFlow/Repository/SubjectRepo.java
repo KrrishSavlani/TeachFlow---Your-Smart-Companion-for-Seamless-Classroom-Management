@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface SubjectRepo extends JpaRepository<Subject, Long> {
 
-    // Find all subjects by school ID
+
     List<Subject> findBySchoolRequestId(Long schoolId);
 
-    // Find subject by name
+
     List<Subject> findBySubjectName(String subjectName);
 }

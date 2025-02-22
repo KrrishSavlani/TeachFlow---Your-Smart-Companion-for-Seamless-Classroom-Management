@@ -11,12 +11,12 @@ public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // Primary Key
+    private Long id;
 
     @NotBlank
-    private String subjectName;  // Example: Mathematics, Science, etc.
+    private String subjectName;
 
-    // Many subjects belong to one school
+
     @ManyToOne
     @JoinColumn(name = "school_id", nullable = false)
     @JsonBackReference

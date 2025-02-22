@@ -73,17 +73,17 @@ public class School {
     @NotNull
     private Boolean requestApproval = false;
 
-    // One School has many Standards
+
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<standard> standards;
 
-    // One School has many Streams
+
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Stream> streams;
 
-    // One School has many Groups
+
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<group> groups;

@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface StandardRepo extends JpaRepository<standard, Long> {
 
-    // Find all standards by school ID
+
     List<standard> findBySchoolRequestId(Long schoolId);
 
-    // Find standard by name
+
     List<standard> findByStandardName(String standardName);
 }

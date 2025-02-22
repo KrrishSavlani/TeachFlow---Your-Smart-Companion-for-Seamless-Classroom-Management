@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface MediumRepo extends JpaRepository<medium, Long> {
 
-    // Find all mediums by school ID
-    List<medium> findBySchool_Id(Long schoolId);  // Corrected
 
-    // Find medium by name
+    List<medium> findBySchool_Id(Long schoolId);
+
+
     List<medium> findByMediumName(String mediumName);
 }
