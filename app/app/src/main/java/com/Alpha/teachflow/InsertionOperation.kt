@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class InsertionOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onConfigure(db: SQLiteDatabase) {
         super.onConfigure(db)
@@ -26,7 +26,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         onCreate(db)
     }
 
-    // ✅ Insert School
+
     fun insertSchool(
         schoolName: String,
         schoolCode: String,
@@ -68,7 +68,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         return result != -1L
     }
 
-    // ✅ Insert Medium (Requires school_id)
+
     fun insertMedium(name: String, schoolId: Int): Boolean {
         return insertData("mediums", ContentValues().apply {
             put("name", name)
@@ -76,7 +76,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         })
     }
 
-    // ✅ Insert Standard (Requires school_id, medium_id)
+
     fun insertStandard(std: Int, schoolId: Int, mediumId: Int): Boolean {
         return insertData("standards", ContentValues().apply {
             put("std", std)
@@ -85,7 +85,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         })
     }
 
-    // ✅ Insert Division (Requires school_id, standard_id)
+
     fun insertDivision(name: String, schoolId: Int, standardId: Int): Boolean {
         return insertData("divisions", ContentValues().apply {
             put("name", name)
@@ -94,7 +94,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         })
     }
 
-    // ✅ Insert Subject (Requires school_id)
+
     fun insertSubject(name: String, schoolId: Int): Boolean {
         return insertData("subjects", ContentValues().apply {
             put("name", name)
@@ -102,7 +102,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         })
     }
 
-    // ✅ Insert Teacher (Requires school_id)
+
     fun insertTeacher(name: String, qualification: String, contact: String, schoolId: Int): Boolean {
         return insertData("teachers", ContentValues().apply {
             put("name", name)
@@ -112,7 +112,7 @@ class RegisterOperation(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         })
     }
 
-    // ✅ Generic function to insert data
+
     private fun insertData(tableName: String, values: ContentValues): Boolean {
         val db = this.writableDatabase
         val result = db.insert(tableName, null, values)
