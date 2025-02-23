@@ -8,10 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface RequestRepo extends JpaRepository<Request, Long> {
-
-
     Optional<Request> findBySchoolCode(String schoolCode);
-
-
     Optional<Request> findByRequestApproval(Boolean requestApproval);
 }

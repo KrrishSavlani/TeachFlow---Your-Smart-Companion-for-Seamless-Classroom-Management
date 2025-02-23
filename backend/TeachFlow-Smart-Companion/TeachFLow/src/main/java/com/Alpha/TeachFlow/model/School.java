@@ -2,13 +2,8 @@ package com.Alpha.TeachFlow.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Data;
-
 import java.util.List;
 
 @Entity
@@ -17,7 +12,7 @@ public class School {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long requestId;  // Primary Key
+    private Long id;
 
     @NotBlank
     private String schoolName;
@@ -73,22 +68,20 @@ public class School {
     @NotNull
     private Boolean requestApproval = false;
 
-
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<standard> standards;
-
 
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Stream> streams;
 
+    // ✅ Renamed `groups` to `schoolGroups` to prevent conflict with Tomcat's Group class
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<SchoolGroup> schoolGroups;
 
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<group> groups;
-
-    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private List<Subject> Subject;
+    private List<Subject> subjects;
 }

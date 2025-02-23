@@ -8,13 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface SchoolRepo extends JpaRepository<School, Long> {
-
-
     Optional<School> findBySchoolCode(String schoolCode);
-
-
     Optional<School> findByEmail(String email);
-
-
     Optional<School> findByRequestApproval(Boolean requestApproval);
 }

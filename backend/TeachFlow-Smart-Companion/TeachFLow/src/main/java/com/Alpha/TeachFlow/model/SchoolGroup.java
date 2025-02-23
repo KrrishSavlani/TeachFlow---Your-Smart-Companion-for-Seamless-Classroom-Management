@@ -1,24 +1,19 @@
 package com.Alpha.TeachFlow.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
 @Data
-public class group {
+public class SchoolGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // Primary Key
+    private Long id;
 
-    @NotBlank
-    private String groupName;  // Example: A, B, C, etc.
-
-    // Many groups belong to one school
     @ManyToOne
     @JoinColumn(name = "school_id", nullable = false)
-    @JsonBackReference
     private School school;
+
+    private String groupName;  // Example field
 }

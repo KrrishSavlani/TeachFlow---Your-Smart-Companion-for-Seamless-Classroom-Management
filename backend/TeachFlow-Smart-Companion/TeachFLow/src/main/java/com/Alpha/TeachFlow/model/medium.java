@@ -16,9 +16,6 @@ import java.util.List;
 @Data
 public class medium {
 
-
-    class Medium {
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
@@ -31,5 +28,4 @@ public class medium {
         @JoinColumn(name = "school_id", nullable = false)
         @JsonBackReference
         private School school;
-    }
 }
