@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Div"
+        android:textSize="63dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Div 1"
+        android:textSize="66dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_border" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Div 2"
+        android:textSize="66dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Div 3"
+        android:textSize="66dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Div 4"
+        android:textSize="66dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Div 5"
+        android:textSize="66dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border" />
+
+
+    <Button
+        android:id="@+id/btn_add_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+ Add Div"
+        android:textSize="33dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/holo_blue_dark" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next ✨"
+        android:textSize="33dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/holo_blue_dark" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/medium_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+</LinearLayout>
