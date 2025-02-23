@@ -11,3 +11,4 @@ interface ApprovalApiService {
     @POST("checkApproval") // Change this to your actual endpoint
     fun checkApproval(@Body request: ApprovalRequest): Call<ApprovalResponse>
 }
+

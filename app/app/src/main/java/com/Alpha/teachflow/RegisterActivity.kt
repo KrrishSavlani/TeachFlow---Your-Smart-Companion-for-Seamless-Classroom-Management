@@ -1,5 +1,6 @@
 package com.Alpha.teachflow
 
+
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -28,7 +29,12 @@ class RegisterActivity : AppCompatActivity() {
 
         // Register Button Click
         btnRegister.setOnClickListener {
-            registerUser()
+           // registerUser()
+            val intent = Intent(this, MediumsActivity::class.java)
+            startActivity(intent)
+            finish() // Optional: Closes the current activity
+
+
         }
     }
 

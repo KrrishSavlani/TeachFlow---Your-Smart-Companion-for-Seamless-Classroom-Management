@@ -25,6 +25,11 @@
         </activity>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".WaitingActivity" />
+        <activity android:name=".AllStdActivity"/>
+        <activity android:name=".MediumsActivity"/>
+        <activity android:name=".SelectStdActivity"/>
+
+
 
 
     </application>

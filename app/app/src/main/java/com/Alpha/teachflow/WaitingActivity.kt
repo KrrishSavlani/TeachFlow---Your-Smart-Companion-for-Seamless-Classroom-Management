@@ -1,5 +1,6 @@
 package com.Alpha.teachflow
 
+ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -19,7 +20,9 @@ class WaitingActivity : AppCompatActivity() {
         val btnCheckApproval: Button = findViewById(R.id.btn_check_approval)
 
         btnCheckApproval.setOnClickListener {
-            checkApprovalStatus("1") // Replace with school id
+            //checkApprovalStatus("1") // Replace with school id
+            val intent = Intent(this, MediumsActivity::class.java)
+            startActivity(intent)
         }
     }
 
